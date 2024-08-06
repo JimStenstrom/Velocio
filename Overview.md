@@ -5,9 +5,9 @@ It incorporates several Modbus concepts such as headers, message byte counters, 
 Similar to Modbus, it uses a client polling-server model, with the PLC being the Server and vBuilder or vFactory being the client.
 
 The protocol exhibits a notable preference for ASCII control characters.
-For instance, the Acknowledgment Control Character (0x06) is commonly used as distinction between client and server messages.
-Other ASCII control characters, such as Form Feed (0x0C), are also used.
-Specifically, two Form Feeds (`FFFF`) signal the end of a string within the Message Data section.
+For instance, the Acknowledgment Control Character `0x06` is commonly used as distinction between client and server messages.
+Other ASCII control characters, such as Form Feed `0x0C`, are also used.
+Specifically, two Form Feeds `0xFF 0xFF` signal the end of a string within the Message Data section.
 
 ## Message Structure
 
@@ -19,8 +19,8 @@ The Velocio USB Protocol message is structured as follows:
 
 ### Protocol Header
 
-The Protocol Header always uses `56 FF FF`, which translates to an uppercase 'V'.
-In the context of this protocol, `FF FF` signifies the end of a single ASCII character string.
+The Protocol Header always uses `0x56FFFF`, which translates to an uppercase V ASCII character.
+Followed by a `0xFFFF`, which signifies the end of this single ASCII character string.
 
 ### Message Byte Size
 
@@ -74,4 +74,4 @@ Below is an example of a Velocio USB Protocol used to set the PLC into Stop Mode
 
 The Velocio USB Protocol combines Modbus-inspired concepts with custom features, including a significant use of ASCII control characters.
 It operates on a client polling-server model.
-The protocol’s unique characteristics, such as the use of Acknowledgment Control Character (0x06) and Form Feed (0x0C), play a crucial role in message formatting and communication.
+The protocol’s unique characteristics, such as the use of Acknowledgment Control Character `0x06` and Form Feed `0x0C`, play a crucial role in message formatting and communication.
