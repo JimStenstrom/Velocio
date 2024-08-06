@@ -1,17 +1,20 @@
 # Control Things Velocio
 
-### Overview:
+## Overview
+
 A simple script to interact with the Velocio Ace 11 PLC via USB
 
 Testing was performed on an Ace 11. Other versions may not function as desired
 
-### Dependancies:
+## Dependancies
+
 py-serial  http://pyserial.readthedocs.io/en/latest/pyserial.html
 
-### Usage: 
+## Usage
+
     python ctvelocio [instruction]
 
-### Control Instructions:
+## Control Instructions
  
         play                    start the routine at current position
         pause                   pause the routine at current position
@@ -29,14 +32,12 @@ py-serial  http://pyserial.readthedocs.io/en/latest/pyserial.html
         set_output_5_on         set output 5 to on
         set_output_6_on         set output 6 to on
 
-
-### Read Instructions:
+## Read Instructions
 
         read_input_bits         query the input bits and print the response
         read_output_bits        query the output bits and print the response
 
-
-### Debug Instructions:
+## Debug Instructions
 
         enter_debug             put the device into debug mode for testing
         exit_debug              exit the device debug mode for normal operation
